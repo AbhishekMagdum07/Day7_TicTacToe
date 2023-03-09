@@ -36,11 +36,20 @@ public class TicTacToe {
         } else
             System.out.println("Select in between o or x");
     }
+    public void uc3_showBoard() {
+        System.out.println(" board: ");
+        System.out.println(board[1]+" | "+board[2]+" | "+board[3]);
+        System.out.println("----------");
+        System.out.println(board[4]+" | "+board[4]+" | "+board[6]);
+        System.out.println("----------");
+        System.out.println(board[7]+" | "+board[9]+" | "+board[9]);
+    }
 
     public static void main(String[] args) {
         TicTacToe runner = new TicTacToe();
         runner.welcome();
         runner.uc1_CreateBoard();
         runner.uc2_choosLetter();
+        runner.uc3_showBoard();
     }
 }
