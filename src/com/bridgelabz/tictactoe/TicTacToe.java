@@ -1,11 +1,14 @@
 package com.bridgelabz.tictactoe;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class TicTacToe {
     Scanner sc = new Scanner(System.in);
+    Random rnd = new Random();
     char userInput = ' ';
     char compInput = ' ';
+    int playerToss;
 
     static char[] board = new char[10];
     public void welcome() {
@@ -58,6 +61,20 @@ public class TicTacToe {
         }
 
     }
+    public void uc6_toss() {
+
+        int toss = rnd.nextInt(2);
+        System.out.println("Enter 1 for head and 0 for tail in order to check who plays first");
+        playerToss = sc.nextInt();
+        if(toss == playerToss && toss == 1) {
+            System.out.println("Heads ,  player won the toss");
+            uc4_makeAMove();
+        }
+        else if(toss == playerToss && toss == 0) {
+            System.out.println("Tails, player won the toss");
+            uc4_makeAMove();
+        }
+    }
 
     public static void main(String[] args) {
         TicTacToe runner = new TicTacToe();
@@ -67,5 +84,6 @@ public class TicTacToe {
         runner.uc3_showBoard();
         runner.uc4_makeAMove();
         runner.uc5_checkFreeSpace();
+        runner.uc6_toss();
     }
 }
