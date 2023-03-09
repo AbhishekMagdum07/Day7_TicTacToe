@@ -44,6 +44,11 @@ public class TicTacToe {
         System.out.println("----------");
         System.out.println(board[7]+" | "+board[9]+" | "+board[9]);
     }
+    public void uc4_makeAMove() {
+        System.out.println("Enter the position number between 1 to 9 ");
+        int move = sc.nextInt();board[move] = userInput;
+        uc3_showBoard();
+    }
 
     public static void main(String[] args) {
         TicTacToe runner = new TicTacToe();
@@ -51,5 +56,6 @@ public class TicTacToe {
         runner.uc1_CreateBoard();
         runner.uc2_choosLetter();
         runner.uc3_showBoard();
+        runner.uc4_makeAMove();
     }
 }
