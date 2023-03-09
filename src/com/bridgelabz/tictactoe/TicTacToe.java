@@ -53,7 +53,7 @@ public class TicTacToe {
         int move = sc.nextInt();
         board[move] = userInput;
         uc3_showBoard();
-
+        uc8_computerTurn();
     }
     public void uc5_checkFreeSpace() {
         System.out.println("Free positions are = ");
@@ -79,7 +79,7 @@ public class TicTacToe {
 
         }else {
             System.out.println("Computer will play first");
-
+            uc8_computerTurn();
         }
     }
     public void uc7_turn() {
@@ -109,7 +109,19 @@ public class TicTacToe {
         }
 
     }
+    public  void uc8_computerTurn() {
 
+        int computerMove;
+        Random random = new Random();
+        computerMove = random.nextInt(9) + 1;
+
+        System.out.println("Computer choose:: " + computerMove);
+        if (board[computerMove] == ' ') {
+            board[computerMove] =  compInput;
+            uc3_showBoard();
+
+        }
+    }
 
     public static void main(String[] args) {
         TicTacToe runner = new TicTacToe();
@@ -121,5 +133,6 @@ public class TicTacToe {
         runner.uc5_checkFreeSpace();
         runner.uc6_toss();
         runner.uc7_turn();
+        runner.uc8_computerTurn();
     }
 }
