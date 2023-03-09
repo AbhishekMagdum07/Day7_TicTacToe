@@ -46,8 +46,17 @@ public class TicTacToe {
     }
     public void uc4_makeAMove() {
         System.out.println("Enter the position number between 1 to 9 ");
-        int move = sc.nextInt();board[move] = userInput;
+        int move = sc.nextInt();
+        board[move] = userInput;
         uc3_showBoard();
+    }
+    public void uc5_checkFreeSpace() {
+        System.out.println("Free positions are = ");
+        for(int i = 1; i < board.length; i++) {
+            if(board[i] == ' ')
+                System.out.print(i+" ");
+        }
+
     }
 
     public static void main(String[] args) {
@@ -57,5 +66,6 @@ public class TicTacToe {
         runner.uc2_choosLetter();
         runner.uc3_showBoard();
         runner.uc4_makeAMove();
+        runner.uc5_checkFreeSpace();
     }
 }
